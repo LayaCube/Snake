@@ -1,0 +1,9 @@
+**/*.d
+**/*.o
+config.bin
+snake
+snake.exe
+save1.sav
+include/playground/**
+src/bckp/
+.vscode/
