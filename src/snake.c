@@ -8,7 +8,7 @@
 
 void snakeDraw(Game* game)
 {
-    im_print(game->x, game->y, "S");
+    im_print(game->snake.x, game->snake.y, "S");
 }
 
 void snakeMovement(Game* game)
@@ -16,22 +16,22 @@ void snakeMovement(Game* game)
     if (game->timePassing > 0.3f)
     {
         game->timePassing = 0;
-        switch (game->direction)
+        switch (game->snake.direction)
         {
         case 1:
-            game->y -= 1;
+            game->snake.y -= 1;
             break;
         
         case 2:
-            game->x += 1;
+            game->snake.x += 1;
             break;
         
         case 3:
-            game->y += 1;
+            game->snake.y += 1;
             break;
 
         case 4:
-            game->x -= 1;
+            game->snake.x -= 1;
             break;
 
         default:
@@ -44,13 +44,13 @@ void snakeMovement(Game* game)
 void snakeControls(Game* game)
 {
     if (pg_io_key_down(GLFW_KEY_UP))
-        game->direction = 1;
+        game->snake.direction = 1;
     if (pg_io_key_down(GLFW_KEY_RIGHT))
-        game->direction = 2;
+        game->snake.direction = 2;
     if (pg_io_key_down(GLFW_KEY_DOWN))
-        game->direction = 3;
+        game->snake.direction = 3;
     if (pg_io_key_down(GLFW_KEY_LEFT))
-        game->direction = 4;
+        game->snake.direction = 4;
 }
 
 int snakeUpdate(Game* game)

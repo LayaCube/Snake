@@ -1,5 +1,7 @@
 **/*.d
 **/*.o
+**/*.stackdump
+*.stackdump
 config.bin
 snake
 snake.exe
